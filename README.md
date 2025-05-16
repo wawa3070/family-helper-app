@@ -48,4 +48,27 @@ streamlit run app.py
    - Choose number of family members
    - View available studios and prices
 
-The app uses OpenAI's GPT-3.5 for meal planning and provides a user-friendly interface for photoshoot booking.
+The app uses OpenAI's GPT-3.5 for meal planning and provides a user-friendly interface for Shoott photoshoot booking.
+
+## Future Development Tasks
+
+1. **Family Preferences Enhancements**
+   - Implement external database storage (e.g., Firebase, MongoDB) for persistent family preferences
+   - Add user authentication to support multiple family profiles
+   - Improve preference management with profile pictures and more detailed health information
+
+2. **Shoott API Integration**
+   - Connect to the official Shoott Photography API
+   - Implement real-time availability checking
+   - Add direct booking functionality without leaving the app
+   - Support payment processing
+
+3. **General Improvements**
+   - Add mobile-responsive design
+   - Implement email notifications for meal plans and bookings
+   - Add recipe saving and favoriting functionality
+   - Create a shopping list export feature (PDF, email, etc.)
+
+4. **Integration with Calendar**
+   - Integrate with Google Calendar or Apple Calendar to automatically add meal prep and photoshoot appointments
+   
