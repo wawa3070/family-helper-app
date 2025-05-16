@@ -11,14 +11,26 @@ import pickle
 from pathlib import Path
 import httpx
 from openai import OpenAI
+import streamlit as st
 
 # Load environment variables
 load_dotenv()
 
 # Initialize OpenAI
 http_client = httpx.Client()
+# Try to get API key from Streamlit secrets first, fall back to environment variable
+try:
+    openai_api_key = st.secrets["openai"]["api_key"]
+except:
+    # For local development with .env file
+    openai_api_key = os.getenv("OPENAI_API_KEY")
+
+if not openai_api_key:
+    st.error("OpenAI API key not found. Please set it in Streamlit secrets or .env file.")
+    st.stop()
+
 client = OpenAI(
-    api_key=os.getenv("OPENAI_API_KEY"),
+    api_key=openai_api_key,
     http_client=http_client
 )
 
